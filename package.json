@@ -6,7 +6,7 @@
   "repository": "github:xxx/xxx",
   "license": "ISC",
   "author": "Mosteast team",
-  "type": "build/index.d.ts",
+  "type": "module",
   "main": "build/index.js",
   "files": [
     "build/"
@@ -17,7 +17,7 @@
     "fix": "npx eslint --fix . --ext .js,.jsx,.ts,.tsx",
     "format": "npx sort-package-json && npm run fix && npx prettier --write .",
     "release": "npm publish --access public",
-    "test": "NODE_ENV=testing npx jest --coverage --runInBand --detectOpenHandles --forceExit"
+    "test": "NODE_ENV=test npx vitest"
   },
   "dependencies": {
     "@mosteast/common_eid": "^0.2.0",
@@ -25,18 +25,18 @@
   },
   "devDependencies": {
     "@types/fs-extra": "^11.0.1",
-    "@types/jest": "^29.2.5",
-    "@types/lodash": "^4.14.191",
-    "@types/node": "^18.11.18",
+    "@types/lodash": "^4.14.192",
+    "@types/node": "^18.15.11",
     "@types/shelljs": "^0.8.11",
-    "@typescript-eslint/eslint-plugin": "^5.48.1",
-    "eslint-plugin-import": "^2.27.4",
-    "fs-extra": "^11.1.0",
-    "jest": "^29.3.1",
+    "@typescript-eslint/eslint-plugin": "^5.57.1",
+    "@vitest/coverage-c8": "^0.30.0",
+    "eslint-plugin-import": "^2.27.5",
+    "fs-extra": "^11.1.1",
     "lodash": "^4.17.21",
     "shelljs": "^0.8.5",
-    "ts-jest": "^29.0.5",
     "ts-node": "^10.9.1",
-    "typescript": "^4.9.4"
+    "typescript": "^5.0.4",
+    "utility-types": "^3.10.0",
+    "vitest": "^0.30.0"
   }
 }
