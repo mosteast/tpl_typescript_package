@@ -1,18 +1,24 @@
 {
   "compilerOptions": {
+    "rootDir": ".",
+    "target": "es2021",
+    "module": "NodeNext",
+    "moduleResolution": "NodeNext",
+    "lib": ["es2021"],
     "strict": true,
-    "target": "es6",
-    "lib": ["esnext"],
     "esModuleInterop": true,
-    "declaration": true,
+    "declaration": false,
     "sourceMap": false,
     "outDir": "build",
-    "module": "commonjs",
-    "moduleResolution": "node",
     "allowJs": true,
     "experimentalDecorators": true,
-    "skipLibCheck": true
+    "skipLibCheck": true,
+    "allowSyntheticDefaultImports": true,
+    "resolveJsonModule": true,
+    "types": ["vitest/globals"]
   },
-  "types": ["vite/client", "vitest/globals"],
-  "exclude": ["node_modules", "build", "tmp", "test", "**/*.test.ts"]
+  "ts-node": {
+    "files": true
+  },
+  "exclude": ["node_modules", "build", "coverage", "storage", "deployment", "doc", "tmp", "dev"]
 }
