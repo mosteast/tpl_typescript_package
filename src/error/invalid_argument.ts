@@ -1,8 +1,8 @@
 import { EID_common } from '@mosteast/common_eid';
 import { E } from '@mosteast/e';
 import { trim } from 'lodash';
-import { E_level } from '../type';
-import { invalid_map } from './util/message';
+import { E_level } from '../type.js';
+import { invalid_map } from './util/message.js';
 
 export class Invalid_argument extends E {
   eid = EID_common.invalid_argument;

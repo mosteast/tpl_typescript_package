@@ -1,5 +1,5 @@
 import { trim } from 'lodash';
-import { T_object } from '../../type';
+import { T_object } from '../../type.js';
 
 /**
  * Serialize invalid map

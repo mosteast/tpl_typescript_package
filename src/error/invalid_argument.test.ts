@@ -1,4 +1,4 @@
-import { Invalid_argument } from './invalid_argument';
+import { Invalid_argument } from './invalid_argument.js';
 
 it('pass as map', async () => {
   const a = 1,
