@@ -13,5 +13,6 @@
     "experimentalDecorators": true,
     "skipLibCheck": true
   },
+  "types": ["vite/client", "vitest/globals"],
   "exclude": ["node_modules", "build", "tmp", "test", "**/*.test.ts"]
 }
