@@ -5,8 +5,13 @@
  | !!! THIS FILE IS LOCATION RESTRICTED, DON'T MOVE IT !!!
  */
 
-const { resolve } = require('path');
-const { stat } = require('fs-extra');
+import fs from 'fs-extra';
+import { dirname, resolve } from 'path';
+import { fileURLToPath } from 'url';
+
+const { stat } = fs;
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = dirname(__filename);
 
 /**
  * App base path
@@ -48,4 +53,4 @@ function reload_env(path) {
   process.env.____ENV_LOADED = '1';
 }
 
-module.exports = { dir_root, load_env_once, reload_env, env };
+export { dir_root, load_env_once, reload_env, env };
