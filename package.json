@@ -15,7 +15,7 @@
     "build": "./bin/build",
     "build_and_release": "npm run build && cd build && npm run release",
     "fix": "npx eslint --fix . --ext .js,.jsx,.ts,.tsx",
-    "format": "npx sort-package-json && npm run fix && npx prettier --write .",
+    "format": "npx sort-package-json && git diff --name-only | xargs -r npx prettier --write",
     "release": "npm publish --access public",
     "test": "NODE_ENV=test npx vitest"
   },
