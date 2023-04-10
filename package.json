@@ -23,9 +23,9 @@
   ],
   "scripts": {
     "build": "node ./bin/build.js",
-    "build_and_release": "npm run build && cd build && npm run release",
     "fix": "npx eslint --fix . --ext .js,.jsx,.ts,.tsx",
     "format": "npx sort-package-json && git diff --name-only | xargs -r npx prettier --write",
+    "go": "npm run build && cd build && npm run release",
     "inherit": "for branch in master; do git pull --no-edit --allow-unrelated-histories git@github.com:mosteast/tpl_typescript_package.git $branch; done",
     "release": "npm publish --access public",
     "test": "NODE_ENV=test npx vitest"
