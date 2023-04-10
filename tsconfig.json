@@ -20,5 +20,8 @@
   "ts-node": {
     "files": true
   },
-  "exclude": ["node_modules", "build", "coverage", "storage", "deployment", "doc", "tmp", "dev"]
+  "exclude": ["node_modules", "build", "coverage", "storage", "deployment", "doc", "tmp", "dev"],
+  "paths": {
+    "@/*": ["./src/*"]
+  }
 }
