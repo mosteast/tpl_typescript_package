@@ -7,7 +7,7 @@
     "lib": ["es2021"],
     "strict": true,
     "esModuleInterop": true,
-    "declaration": false,
+    "declaration": true,
     "sourceMap": false,
     "outDir": "build",
     "allowJs": true,
