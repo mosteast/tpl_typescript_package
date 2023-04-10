@@ -29,7 +29,7 @@ function prepare_environment() {
 function compile() {
   ensureDirSync(b());
   exec(`rm -fr ${b('*')}`);
-  exec(`npx tsc`);
+  exec(`npx tsup`);
 }
 
 function copy_requirements() {
@@ -40,8 +40,6 @@ function copy_requirements() {
 async function edit_config() {
   const json = (await import(r('./package.json'), { assert: { type: 'json' } })).default;
   delete json.files;
-  json.main = 'index.js';
-  json.type = 'index.d.ts';
   writeFileSync(dir_root('build/package.json'), JSON.stringify(json), () => {});
 }
 

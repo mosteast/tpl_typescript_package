@@ -1,12 +1,12 @@
 import { EID_common } from '@mosteast/common_eid';
 import { E } from '@mosteast/e';
-import { trim } from 'lodash';
+import trim from 'lodash/trim.js';
 import { E_level } from '../type.js';
 import { invalid_map } from './util/message.js';
 
 export class Invalid_argument extends E {
   eid = EID_common.invalid_argument;
-  data?: T_invalid_argument_data;
+  declare data?: T_invalid_argument_data;
 
   constructor(message: string, solution?: string);
   constructor(map: T_invalid_argument_map, solution?: string);

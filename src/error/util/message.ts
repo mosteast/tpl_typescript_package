@@ -1,4 +1,4 @@
-import { trim } from 'lodash';
+import trim from 'lodash/trim.js';
 import { T_object } from '../../type.js';
 
 /**

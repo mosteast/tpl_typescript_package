@@ -7,7 +7,17 @@
   "license": "ISC",
   "author": "Mosteast team",
   "type": "module",
-  "main": "build/index.js",
+  "exports": {
+    ".": {
+      "require": "./index.cjs",
+      "import": "./index.js",
+      "types": "./index.d.ts"
+    }
+  },
+  "main": "index.cjs",
+  "module": "index.js",
+  "browser": "index.global.js",
+  "types": "index.d.ts",
   "files": [
     "build/"
   ],
@@ -22,11 +32,13 @@
   },
   "dependencies": {
     "@mosteast/common_eid": "^0.2.0",
-    "@mosteast/e": "^0.2.2"
+    "@mosteast/e": "^0.2.2",
+    "lodash-es": "^4.17.21",
+    "marked": "^4.3.0"
   },
   "devDependencies": {
     "@types/fs-extra": "^11.0.1",
-    "@types/lodash": "^4.14.192",
+    "@types/lodash-es": "^4.17.7",
     "@types/node": "^18.15.11",
     "@types/shelljs": "^0.8.11",
     "@typescript-eslint/eslint-plugin": "^5.57.1",
@@ -36,6 +48,7 @@
     "lodash": "^4.17.21",
     "shelljs": "^0.8.5",
     "ts-node": "^10.9.1",
+    "tsup": "^6.7.0",
     "typescript": "^5.0.4",
     "utility-types": "^3.10.0",
     "vitest": "^0.30.0"
