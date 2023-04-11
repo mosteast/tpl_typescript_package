@@ -9,20 +9,20 @@
   "type": "module",
   "exports": {
     ".": {
-      "require": "./index.cjs",
-      "import": "./index.js",
-      "types": "./index.d.ts"
+      "require": "./build/index.cjs",
+      "import": "./build/index.js",
+      "types": "./build/index.d.ts"
     }
   },
-  "main": "index.cjs",
-  "module": "index.js",
-  "browser": "index.global.js",
-  "types": "index.d.ts",
+  "main": "build/index.cjs",
+  "module": "build/index.js",
+  "browser": "build/index.global.js",
+  "types": "build/index.d.ts",
   "files": [
     "build/"
   ],
   "scripts": {
-    "build": "node ./bin/build.js",
+    "build": "npx tsup",
     "fix": "npx eslint --fix . --ext .js,.jsx,.ts,.tsx",
     "format": "npx sort-package-json && git diff --name-only | xargs -r npx prettier --write",
     "go": "npm run build && cd build && npm run release",
