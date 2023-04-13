@@ -15,10 +15,7 @@
     "skipLibCheck": true,
     "allowSyntheticDefaultImports": true,
     "resolveJsonModule": true,
-    "types": ["vitest/globals"],
-    "paths": {
-      "@/*": ["./src/*"]
-    }
+    "types": ["vitest/globals"]
   },
   "ts-node": {
     "files": true
