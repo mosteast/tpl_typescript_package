@@ -1,6 +1,6 @@
 import { EID_common } from '@mosteast/common_eid';
 import { E } from '@mosteast/e';
-import trim from 'lodash/trim.js';
+import { trim } from 'lodash-es';
 import { E_level } from '../type/internal.js';
 import { invalid_map } from './util/message.js';
 

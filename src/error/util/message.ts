@@ -1,4 +1,4 @@
-import trim from 'lodash/trim.js';
+import { trim } from 'lodash-es';
 import { T_object } from '../../type/internal.js';
 
 /**
