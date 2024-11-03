@@ -33,6 +33,7 @@
   "dependencies": {
     "@mosteast/common_eid": "^0.2.0",
     "@mosteast/e": "^0.2.2",
+    "@typescript-eslint/eslint-plugin": "^8.12.2",
     "lodash-es": "^4.17.21"
   },
   "devDependencies": {
