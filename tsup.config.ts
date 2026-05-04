@@ -1,14 +1,13 @@
-import { Options } from 'tsup';
+import { defineConfig } from 'tsup';
 
-export const tsup: Options = {
+export default defineConfig({
   splitting: false,
-  clean: true, // clean up the build folder
-  dts: true, // generate dts files
-  format: ['esm', 'cjs', 'iife'], // generate cjs and esm files
+  clean: true,
+  dts: true,
+  format: ['esm', 'cjs', 'iife'],
   bundle: true,
   skipNodeModulesBundle: true,
-  entryPoints: ['src/index.ts'],
-  target: 'es2020',
+  entry: ['src/index.ts'],
+  target: 'es2021',
   outDir: 'build',
-  entry: ['src/**/*.ts'], //include all files under src
-};
+});

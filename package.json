@@ -9,9 +9,9 @@
   "type": "module",
   "exports": {
     ".": {
-      "require": "./build/index.cjs",
+      "types": "./build/index.d.ts",
       "import": "./build/index.js",
-      "types": "./build/index.d.ts"
+      "require": "./build/index.cjs"
     }
   },
   "main": "build/index.cjs",
@@ -23,33 +23,43 @@
   ],
   "scripts": {
     "build": "npx tsup",
-    "fix": "npx eslint --fix . --ext .js,.jsx,.ts,.tsx",
-    "format": "npx sort-package-json && git diff --name-only | xargs -r npx prettier --write",
-    "go": "npm run build && cd build && npm run release",
+    "fix": "ESLINT_USE_FLAT_CONFIG=false npx eslint --fix . --ext .js,.jsx,.ts,.tsx",
+    "format": "npx sort-package-json && git diff --name-only -z --diff-filter=ACMR | xargs -0 npx prettier --write --ignore-unknown",
+    "go": "npm run build && npm publish --access public",
     "inherit": "for branch in master; do git pull --no-edit --allow-unrelated-histories git@github.com:mosteast/tpl_typescript_package.git $branch; done",
+    "lint": "ESLINT_USE_FLAT_CONFIG=false npx eslint . --ext .js,.jsx,.ts,.tsx",
+    "prepublishOnly": "npm run build && npm test",
     "release": "npm publish --access public",
     "test": "NODE_ENV=test npx vitest"
   },
   "dependencies": {
     "@mosteast/common_eid": "^0.2.0",
     "@mosteast/e": "^0.2.2",
-    "@typescript-eslint/eslint-plugin": "^8.12.2",
-    "debug": "^4.3.7",
-    "lodash-es": "^4.17.21"
+    "debug": "^4.4.3",
+    "dotenv": "^16.6.1",
+    "lodash-es": "^4.18.1"
   },
   "devDependencies": {
-    "@types/debug": "^4.1.12",
+    "@types/debug": "^4.1.13",
     "@types/fs-extra": "^11.0.4",
     "@types/lodash-es": "^4.17.12",
-    "@types/node": "^22.8.7",
-    "@types/shelljs": "^0.8.15",
-    "eslint-plugin-import": "^2.31.0",
-    "fs-extra": "^11.2.0",
-    "shelljs": "^0.8.5",
+    "@types/node": "^25.6.0",
+    "@types/shelljs": "^0.10.0",
+    "@typescript-eslint/eslint-plugin": "^8.59.1",
+    "@typescript-eslint/parser": "^8.59.1",
+    "@vitest/eslint-plugin": "^1.6.16",
+    "eslint": "^9.39.4",
+    "eslint-plugin-import": "^2.32.0",
+    "fs-extra": "^11.3.4",
+    "prettier": "^3.6.2",
+    "shelljs": "^0.10.0",
     "ts-node": "^10.9.2",
-    "tsup": "^8.3.5",
-    "typescript": "^5.6.3",
+    "tsup": "^8.5.1",
+    "typescript": "^6.0.3",
     "utility-types": "^3.11.0",
-    "vitest": "^2.1.4"
+    "vitest": "^4.1.5"
+  },
+  "engines": {
+    "node": ">=18"
   }
 }

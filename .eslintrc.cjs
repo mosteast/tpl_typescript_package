@@ -2,7 +2,6 @@ module.exports = {
   root: true,
   env: {
     node: true,
-    jest: true,
   },
   rules: {
     'no-fallthrough': 'off',
@@ -31,11 +30,16 @@ module.exports = {
     ],
     '@typescript-eslint/no-floating-promises': 'off',
     '@typescript-eslint/no-var-requires': 'off',
-    '@typescript-eslint/semi': ['error'],
+    semi: ['error'],
   },
   parser: '@typescript-eslint/parser',
-  plugins: ['@typescript-eslint'],
-  extends: ['eslint:recommended', 'plugin:@typescript-eslint/recommended', 'plugin:import/typescript'],
+  plugins: ['@typescript-eslint', '@vitest'],
+  extends: [
+    'eslint:recommended',
+    'plugin:@typescript-eslint/recommended',
+    'plugin:import/typescript',
+    'plugin:@vitest/legacy-recommended',
+  ],
   parserOptions: {
     project: './tsconfig.lint.json',
   },

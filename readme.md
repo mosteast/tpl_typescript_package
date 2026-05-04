@@ -1,6 +1,6 @@
 # Template For Typescript-Based Node Package
 
-> Please fill following fields with placehold "{xxx}"
+> Replace repository placeholders (`xxx`, `{xxx}`) with your package name and docs before publishing.
 
 ## Project Information
 
@@ -11,8 +11,9 @@
 
 ```bash
 npm i # Install.
-npm t # Run test first.
-npm start # Start development.
+npm run lint # Check style and types-aware rules.
+npm t # Run tests.
+npm run build # Produce build/ (also runs before publish via prepublishOnly).
 ```
 
 ### {Can do this}
